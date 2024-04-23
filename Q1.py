@@ -1,3 +1,4 @@
+password = ''
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
@@ -6,7 +7,7 @@ app = Flask(__name__)
 # Configure MySQL database connection
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Par1095#'
+app.config['MYSQL_PASSWORD'] = password
 app.config['MYSQL_DB'] = 'dcc'
 
 mysql = MySQL(app)
