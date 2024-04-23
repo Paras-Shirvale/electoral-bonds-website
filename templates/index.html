@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: auto;
+            background-color: #FEEE40;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        button {
+            display: inline-block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .scroll-note {
+            text-align: center;
+            margin-top: 10px;
+            color: #888;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr_No</th>
+                <th>Reference_No_URN</th>
+                <th>Journal_Date</th>
+                <th>Date_of_Purchase</th>
+                <th>Date_of_Expiry</th>
+                <th>Name_of_the_Purchaser</th>
+                <th>Prefix</th>
+                <th>Bond_Number</th>
+                <th>Denominations</th>
+                <th>Issue_Branch_Code</th>
+                <th>Issue_Teller</th>
+                <th>Status</th>
+                <th>Date_of_Encashment</th>
+                <th>Name_of_the_Political_Party</th>
+                <th>Account_Number</th>
+                <th>Denominations</th>
+                <th>Pay_Teller</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in ans_1 %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+                <td>{{ record[4] }}</td>
+                <td>{{ record[5] }}</td>
+                <td>{{ record[6] }}</td>
+                <td>{{ record[7] }}</td>
+                <td>{{ record[8] }}</td>
+                <td>{{ record[9] }}</td>
+                <td>{{ record[10] }}</td>
+                <td>{{ record[11] }}</td>
+                <td>{{ record[12] }}</td>
+                <td>{{ record[13] }}</td>
+                <td>{{ record[14] }}</td>
+                <td>{{ record[15] }}</td>
+                <td>{{ record[16] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button><a href="/">Back To Main Page</a></button>
+    <div class="scroll-note">
+        <p>Scroll horizontally to see other columns</p>
+    </div>
+</body>
+</html>

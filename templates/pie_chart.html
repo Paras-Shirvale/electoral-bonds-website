@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 1111px;
+            height: 600px;
+        }
+
+        .download-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .home-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .home-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Party Distribution</h1>
+    <div>
+        <canvas id="pieChart" width="400" height="400"></canvas>
+    </div>
+    
+    <!-- Add a download button -->
+    <div>
+        <button class="download-btn" onclick="downloadChart()">Download Chart</button>
+    </div>
+
+    <script>
+        // Prepare the labels and values for the chart
+        var labels = {{party|tojson}};
+        var values = {{value|tojson}};
+
+        // Create the pie chart
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: [
+                        '#FF6384', // Red
+                        '#36A2EB', // Blue
+                        '#FFCE56', // Yellow
+                        '#4BC0C0', // Teal
+                        '#9966FF', // Purple
+                        '#FF9F40'  // Orange
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Party Distribution',
+                        fontSize: 18
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        labels: {
+                            fontSize: 14,
+                            padding: 10
+                        }
+                    }
+                }
+            }
+        });
+
+        // Function to download the chart as an image
+        function downloadChart() {
+            var downloadLink = document.createElement('a');
+            downloadLink.href = document.getElementById('pieChart').toDataURL('image/png');
+            downloadLink.download = 'chart.png';
+            downloadLink.click();
+        }
+
+        // Function to navigate to the home page
+        function goToHome() {
+            window.location.href = "home.html";
+        }
+    </script>
+    <div>
+        <button class="home-btn" onclick="goToHome()">Go to Home</button>
+    </div>
+</body>
+</html>

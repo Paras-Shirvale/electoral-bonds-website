@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="">Home</a>
+        </nav>
+    </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="https://i.ibb.co/qCkd9jS/img1.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 1</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        Implement a robust search functionality that allows users to quickly
+search for specific records based on Bond Number or filter data based on
+any column in the table except Sr. No. and Status (e.g., date, political
+party, company name). The output should be displayed in the form of a
+table which is fetched from the database for a given query.
+                    </div>
+                    <div class="buttons">
+                        <form action="/a1" method="post">
+                            <label for="query">Bond Number :</label>
+                            <input type="text" id="query" name="query"><br><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/jrRb11q/img2.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 2</div>
+                    <div class="des">
+                        The option to select a Company/Individual from a drop-down/search, and
+show how many bonds and the total value of bonds purchased per year.
+You can present a bar plot depicting your results.
+                    </div>
+                    <div class="buttons">
+                        <form action="/result2" method="post">
+                            <label for="company">Select Company:</label>
+                            <select id="company" name="company">
+                                <{% for company in data %}
+                                <option value="{{company[0]}}">{{company[0]}}</option>
+                                {%endfor%}
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/NSwVv8D/img3.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 3</div>
+                    <div class="des">
+                        The option to select a political party from a drop-down/search, and show
+how many bonds and total value per year are in the timeline. You can
+present a bar plot depicting your results.
+                    </div>
+                    <div class="buttons">
+                        <form action="/result" method="post">
+                            <label for="company">Select Company:</label>
+                            <select id="company" name="company">
+                                <option value="ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM">ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM</option>
+                                <option value="BHARAT RASHTRA SAMITHI">BHARAT RASHTRA SAMITHI</option>
+                                <option value="BHARATIYA JANATA PARTY">BHARATIYA JANATA PARTY</option>
+                                <option value="PRESIDENT, ALL INDIA CONGRESS COMMITTEE">PRESIDENT, ALL INDIA CONGRESS COMMITTEE</option>
+                                <option value="SHIVSENA">SHIVSENA</option>
+                                <option value="TELUGU DESAM PARTY">TELUGU DESAM PARTY</option>
+                                <option value="YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)">YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)</option>
+                                <option value="DRAVIDA MUNNETRA KAZHAGAM (DMK)">DRAVIDA MUNNETRA KAZHAGAM (DMK)</option>
+                                <option value="JANATA DAL ( SECULAR )">JANATA DAL ( SECULAR )</option>
+                                <option value="NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH">NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH</option>
+                                <option value="ALL INDIA TRINAMOOL CONGRESS">ALL INDIA TRINAMOOL CONGRESS</option>
+                                <option value="BIHAR PRADESH JANTA DAL(UNITED)">BIHAR PRADESH JANTA DAL(UNITED)</option>
+                                <option value="RASHTRIYA JANTA DAL">RASHTRIYA JANTA DAL</option>
+                                <option value="AAM AADMI PARTY">AAM AADMI PARTY</option>
+                                <option value="ADYAKSHA SAMAJVADI PARTY">ADYAKSHA SAMAJVADI PARTY</option>
+                                <option value="SHIROMANI AKALI DAL">SHIROMANI AKALI DAL</option>
+                                <option value="JHARKHAND MUKTI MORCHA">JHARKHAND MUKTI MORCHA</option>
+                                <option value="JAMMU AND KASHMIR NATIONAL CONFERENCE">JAMMU AND KASHMIR NATIONAL CONFERENCE</option>
+                                <option value="BIJU JANATA DAL">BIJU JANATA DAL</option>
+                                <option value="GOA FORWARD PARTY">GOA FORWARD PARTY</option>
+                                <option value="MAHARASHTRAWADI GOMNTAK PARTY">MAHARASHTRAWADI GOMNTAK PARTY</option>
+                                <option value="SIKKIM KRANTIKARI MORCHA">SIKKIM KRANTIKARI MORCHA</option>
+                                <option value="JANASENA PARTY">JANASENA PARTY</option>
+                                <option value="SIKKIM DEMOCRATIC FRONT">SIKKIM DEMOCRATIC FRONT</option>
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/Bq4Q0M8/img4.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 4</div>
+                    <div class="des">
+                        The option to select a political party from a drop-down/search, shows
+which companies have donated to it and what amount individually and
+combined.
+                    </div>
+                    <div class="buttons">
+                        <form method="post" action="/result4">
+                            <label for="party">Select a political party:</label><br><br>
+                            <select id="party" name="party">
+                                <option value="ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM">ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM</option>
+                                <option value="BHARAT RASHTRA SAMITHI">BHARAT RASHTRA SAMITHI</option>
+                                <option value="BHARATIYA JANATA PARTY">BHARATIYA JANATA PARTY</option>
+                                <option value="PRESIDENT, ALL INDIA CONGRESS COMMITTEE">PRESIDENT, ALL INDIA CONGRESS COMMITTEE</option>
+                                <option value="SHIVSENA">SHIVSENA</option>
+                                <option value="TELUGU DESAM PARTY">TELUGU DESAM PARTY</option>
+                                <option value="YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)">YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)</option>
+                                <option value="DRAVIDA MUNNETRA KAZHAGAM (DMK)">DRAVIDA MUNNETRA KAZHAGAM (DMK)</option>
+                                <option value="JANATA DAL ( SECULAR )">JANATA DAL ( SECULAR )</option>
+                                <option value="NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH">NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH</option>
+                                <option value="ALL INDIA TRINAMOOL CONGRESS">ALL INDIA TRINAMOOL CONGRESS</option>
+                                <option value="BIHAR PRADESH JANTA DAL(UNITED)">BIHAR PRADESH JANTA DAL(UNITED)</option>
+                                <option value="RASHTRIYA JANTA DAL">RASHTRIYA JANTA DAL</option>
+                                <option value="AAM AADMI PARTY">AAM AADMI PARTY</option>
+                                <option value="ADYAKSHA SAMAJVADI PARTY">ADYAKSHA SAMAJVADI PARTY</option>
+                                <option value="SHIROMANI AKALI DAL">SHIROMANI AKALI DAL</option>
+                                <option value="JHARKHAND MUKTI MORCHA">JHARKHAND MUKTI MORCHA</option>
+                                <option value="JAMMU AND KASHMIR NATIONAL CONFERENCE">JAMMU AND KASHMIR NATIONAL CONFERENCE</option>
+                                <option value="BIJU JANATA DAL">BIJU JANATA DAL</option>
+                                <option value="GOA FORWARD PARTY">GOA FORWARD PARTY</option>
+                                <option value="MAHARASHTRAWADI GOMNTAK PARTY">MAHARASHTRAWADI GOMNTAK PARTY</option>
+                                <option value="SIKKIM KRANTIKARI MORCHA">SIKKIM KRANTIKARI MORCHA</option>
+                                <option value="JANASENA PARTY">JANASENA PARTY</option>
+                                <option value="SIKKIM DEMOCRATIC FRONT">SIKKIM DEMOCRATIC FRONT</option>
+                            </select><br><br>
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/Bq4Q0M8/img4.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 5</div>
+                    <div class="des">
+                        Similarly, provide an option to select a company from a
+drop-down/search, showcasing which parties they have donated and what
+amount individually and combined.
+                    </div>
+                    <div class="buttons">
+                        <form  method="POST" action='/result5' id="company-form">
+                            <label for="company">Select a company:</label><br><br>
+                            <select id="company" name="company">
+                                {% for company in data %}
+                                <option value="{{company[0]}}">{{company[0]}}</option>
+                                {%endfor%}
+                            </select><br><br>
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/Bq4Q0M8/img4.jpg">
+                <div class="content">
+                    <div class="author">Paras Prashant Shirvale (23110232) </div>
+                    <div class="title">Question 6</div>
+                    <div class="des">
+                        Apart from 1e4 and 1e5, you can also display the Pie chart depicting the
+total amount of donations to all the parties.
+                    </div>
+                    <div class="buttons">
+                        <form action='/result6' id="company-form" method="POST">
+                            <input type="submit" value="Pie Chart">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="https://i.ibb.co/qCkd9jS/img1.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/jrRb11q/img2.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/NSwVv8D/img3.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/Bq4Q0M8/img4.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

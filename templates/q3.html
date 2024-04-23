@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bond Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .home-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .home-button button {
+            padding: 8px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .home-button button:hover {
+            background-color: #005f6b;
+        }   
+    </style>
+</head>
+<body>
+    <h1>Bond Data Analysis</h1>
+    
+    <form action="/result" method="post">
+        <label for="company">Select Company:</label>
+        <select id="company" name="company">
+            <option value="ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM">ALL INDIA ANNA DRAVIDA MUNNETRA KAZHAGAM</option>
+            <option value="BHARAT RASHTRA SAMITHI">BHARAT RASHTRA SAMITHI</option>
+            <option value="BHARATIYA JANATA PARTY">BHARATIYA JANATA PARTY</option>
+            <option value="PRESIDENT, ALL INDIA CONGRESS COMMITTEE">PRESIDENT, ALL INDIA CONGRESS COMMITTEE</option>
+            <option value="SHIVSENA">SHIVSENA</option>
+            <option value="TELUGU DESAM PARTY">TELUGU DESAM PARTY</option>
+            <option value="YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)">YSR CONGRESS PARTY (YUVAJANA SRAMIKA RYTHU CONGRESS PARTY)</option>
+            <option value="DRAVIDA MUNNETRA KAZHAGAM (DMK)">DRAVIDA MUNNETRA KAZHAGAM (DMK)</option>
+            <option value="JANATA DAL ( SECULAR )">JANATA DAL ( SECULAR )</option>
+            <option value="NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH">NATIONALIST CONGRESS PARTY MAHARASHTRA PRADESH</option>
+            <option value="ALL INDIA TRINAMOOL CONGRESS">ALL INDIA TRINAMOOL CONGRESS</option>
+            <option value="BIHAR PRADESH JANTA DAL(UNITED)">BIHAR PRADESH JANTA DAL(UNITED)</option>
+            <option value="RASHTRIYA JANTA DAL">RASHTRIYA JANTA DAL</option>
+            <option value="AAM AADMI PARTY">AAM AADMI PARTY</option>
+            <option value="ADYAKSHA SAMAJVADI PARTY">ADYAKSHA SAMAJVADI PARTY</option>
+            <option value="SHIROMANI AKALI DAL">SHIROMANI AKALI DAL</option>
+            <option value="JHARKHAND MUKTI MORCHA">JHARKHAND MUKTI MORCHA</option>
+            <option value="JAMMU AND KASHMIR NATIONAL CONFERENCE">JAMMU AND KASHMIR NATIONAL CONFERENCE</option>
+            <option value="BIJU JANATA DAL">BIJU JANATA DAL</option>
+            <option value="GOA FORWARD PARTY">GOA FORWARD PARTY</option>
+            <option value="MAHARASHTRAWADI GOMNTAK PARTY">MAHARASHTRAWADI GOMNTAK PARTY</option>
+            <option value="SIKKIM KRANTIKARI MORCHA">SIKKIM KRANTIKARI MORCHA</option>
+            <option value="JANASENA PARTY">JANASENA PARTY</option>
+            <option value="SIKKIM DEMOCRATIC FRONT">SIKKIM DEMOCRATIC FRONT</option>
+        </select>
+        
+        <input type="submit" value="Search">
+    </form>
+    <div class="home-button">
+        <button onclick="window.location.href = '/';">Go to Home Page</button>
+    </div>
+</body>
+</html>
